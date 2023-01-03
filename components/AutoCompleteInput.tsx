@@ -7,17 +7,18 @@ import {
 } from "@choc-ui/chakra-autocomplete";
 import { assets } from "../config";
 import { useRecoilState } from "recoil";
-import { assetsState } from "../recoil";
+import { assetState } from "../recoil";
 
 export default function AutoCompleteInputComponent() {
-  const [asset, setAsset] = useRecoilState(assetsState);
+  const [asset, setAsset] = useRecoilState<string>(assetState);
   return (
-    <FormControl w="400px" mr={3}>
+    <FormControl w="500px" mr={3}>
       <FormLabel textTransform="capitalize" fontSize={18}>
         asset name
       </FormLabel>
       <AutoComplete openOnFocus>
         <AutoCompleteInput
+          h={12}
           variant="filled"
           value={asset}
           onChange={(e) => setAsset(e.target.value)}
