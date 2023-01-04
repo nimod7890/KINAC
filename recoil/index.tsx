@@ -22,14 +22,26 @@ export const characterState = atom<string[]>({
   default: []
 });
 
+export const assetIdxSelector = selector({
+  key: `assetIdxSelector/${v1()}`,
+  get: ({ get }) => {
+    const asset = get(assetState);
+    for (let i = 0; i < assets.length; i++) {
+      if (asset == assets[i]) {
+        return i;
+      }
+    }
+  }
+});
+
 export const characterSelector = selector({
   key: `characterSelector/${v1()}`,
   get: ({ get }) => {
-    const asset = get(assetState);
+    const assetIdx = get(assetIdxSelector);
     const device = get(deviceState);
-    if (asset == assets[0]) {
+    if (assetIdx == 0) {
       return LASM[device - 1];
-    } else if (asset == assets[1]) {
+    } else if (assetIdx == 2) {
       return PT[device - 1];
     }
     return ETC[device - 1];

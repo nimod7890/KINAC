@@ -1,18 +1,21 @@
 import { Radio, RadioGroup, Stack } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
-import { deviceState, onCllickState } from "../recoil";
+import { characterState, deviceState, onCllickState } from "../recoil";
 
 export default function DeviceRadioGroup() {
   const [device, setDevice] = useRecoilState<number>(deviceState);
   const [onClickList, setOnclick] = useRecoilState<boolean[]>(onCllickState);
+  const [character, setCharacter] = useRecoilState<string[]>(characterState);
 
   return (
     <RadioGroup
       alignSelf={"center"}
       textTransform={"capitalize"}
+      value={device.toString()}
       onChange={(value) => {
         setDevice(Number(value));
         setOnclick([]);
+        setCharacter([]);
       }}
     >
       <Stack spacing={50} direction="row">

@@ -8,9 +8,10 @@ import {
 } from "@chakra-ui/react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { characterSelector, characterState, onCllickState } from "../recoil";
+import { CharacterType } from "../types";
 
 export default function CharacterRadioGroup() {
-  const characters = useRecoilValue<[string, string[]][]>(characterSelector);
+  const characters = useRecoilValue<CharacterType>(characterSelector);
   const [onClickList, setOnclick] = useRecoilState<boolean[]>(onCllickState);
   const [character, setCharacter] = useRecoilState<string[]>(characterState);
   const falseList = Array.from({ length: characters.length }, (v, i) => false);
@@ -37,12 +38,13 @@ export default function CharacterRadioGroup() {
             onClick={(v) => {
               if (onClickList[idx] == true) {
                 setOnclick(falseList);
+                setCharacter([]);
               } else {
                 let copy = [...falseList];
                 copy[idx] = true;
                 setOnclick([...copy]);
+                setCharacter([c[0]]);
               }
-              setCharacter([c[0]]);
             }}
           >
             {c[0]}
