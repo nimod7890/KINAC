@@ -17,12 +17,18 @@ import AutoCompleteInputComponent from "../components/AutoCompleteInput";
 import DeviceRadioGroup from "../components/DeviceRadioGroup";
 import CharacterRadioGroup from "../components/CharacterRadioGroup";
 import { useRecoilValue } from "recoil";
-import { assetState, characterState, deviceState } from "../recoil";
+import {
+  assetState,
+  characterState,
+  deviceState,
+  pathwaySelector
+} from "../recoil";
 
 export default function Home() {
   const asset = useRecoilValue<string>(assetState);
   const device = useRecoilValue<number>(deviceState);
   const character = useRecoilValue<string[]>(characterState);
+  const pathway = useRecoilValue<string[]>(pathwaySelector);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -62,22 +68,27 @@ export default function Home() {
         >
           <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(3px)" />
           <ModalContent>
-            <ModalHeader fontWeight={"bold"} color="facebook.800">
+            <ModalHeader fontWeight={"extrabold"} color="facebook.800">
               {asset}
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Text fontSize={14}>
+              <Text fontSize={14} fontWeight={"hairline"}>
                 구분: {device == 1 ? "Hardware" : "Software"}
                 <br />
                 특성: {character[0]} - {character[1]}
               </Text>
-              <Divider mt={2} mb={5} borderColor="#385898" />
-              <Text fontWeight={"bold"} color="facebook.800">
-                Attack Pathway:
+              <Divider mt={3} mb={4} borderColor="#385898" />
+              <Text fontWeight={"bold"} color="facebook.800" pb={5}>
+                Attack Pathway
+                {pathway.map((p, i) => (
+                  <Text fontWeight={"normal"} color="black" key={`key${i}`}>
+                    {p}
+                  </Text>
+                ))}
               </Text>
               <Text fontWeight={"bold"} color="facebook.800">
-                Attack Case:
+                Attack Case
               </Text>
             </ModalBody>
             <ModalFooter>

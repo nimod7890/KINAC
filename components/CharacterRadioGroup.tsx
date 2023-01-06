@@ -7,13 +7,20 @@ import {
   RadioGroup
 } from "@chakra-ui/react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { characterSelector, characterState, onCllickState } from "../recoil";
+import {
+  characterSelector,
+  characterState,
+  onCllickState,
+  pathwayState
+} from "../recoil";
 import { CharacterType } from "../types";
 
 export default function CharacterRadioGroup() {
   const characters = useRecoilValue<CharacterType>(characterSelector);
   const [onClickList, setOnclick] = useRecoilState<boolean[]>(onCllickState);
   const [character, setCharacter] = useRecoilState<string[]>(characterState);
+  const [pathwayKey, setPathwayKey] = useRecoilState<string[]>(pathwayState);
+
   const falseList = Array.from({ length: characters.length }, (v, i) => false);
 
   return (
@@ -55,14 +62,17 @@ export default function CharacterRadioGroup() {
                 {c[1].map((v, i) => (
                   <>
                     <Radio
-                      key={`characterChild-${v}${i}`}
+                      key={`characterChild-${v[0]}${i}`}
                       size="md"
                       m={1}
                       colorScheme="facebook"
-                      value={`${v}`}
-                      onChange={(e) => setCharacter([...character, v])}
+                      value={`${v[0]}`}
+                      onChange={(e) => {
+                        setCharacter([...character, v[0]]);
+                        setPathwayKey(v[1]);
+                      }}
                     >
-                      {v}
+                      {v[0]}
                     </Radio>
                     <Divider />
                   </>

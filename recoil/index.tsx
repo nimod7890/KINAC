@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 import { v1 } from "uuid";
-import { assets, ETC, LASM, PT } from "../config";
+import { assets, LASM, pathWay } from "../config";
 
 export const assetState = atom<string>({
   key: `assetState/${v1()}`,
@@ -21,6 +21,10 @@ export const characterState = atom<string[]>({
   key: `characterState/${v1()}`,
   default: []
 });
+export const pathwayState = atom<string[]>({
+  key: `pathwayState/${v1()}`,
+  default: []
+});
 
 export const assetIdxSelector = selector({
   key: `assetIdxSelector/${v1()}`,
@@ -34,6 +38,17 @@ export const assetIdxSelector = selector({
   }
 });
 
+export const pathwaySelector = selector({
+  key: `pathwaySelector/${v1()}`,
+  get: ({ get }) => {
+    const pathway = get(pathwayState);
+    var arr = [];
+    for (const key of pathway) {
+      arr.push(pathWay[key]);
+    }
+    return arr;
+  }
+});
 export const characterSelector = selector({
   key: `characterSelector/${v1()}`,
   get: ({ get }) => {
@@ -41,9 +56,8 @@ export const characterSelector = selector({
     const device = get(deviceState);
     if (assetIdx == 0) {
       return LASM[device - 1];
-    } else if (assetIdx == 2) {
-      return PT[device - 1];
     }
-    return ETC[device - 1];
+    //Todo
+    return LASM[device - 1];
   }
 });
