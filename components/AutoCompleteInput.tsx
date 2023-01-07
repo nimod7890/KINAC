@@ -5,7 +5,6 @@ import {
   AutoCompleteItem,
   AutoCompleteList
 } from "@choc-ui/chakra-autocomplete";
-import { assets } from "../config";
 import { useRecoilState } from "recoil";
 import {
   assetState,
@@ -13,6 +12,19 @@ import {
   deviceState,
   onCllickState
 } from "../recoil";
+
+const assets: string[] = [
+  "Limit/Alarm Switch Module",
+  "Pressure Transmitters",
+  "PID Controller",
+  "Digital Temperature Indicator",
+  "A3",
+  "B1",
+  "필수계통 RTU",
+  "PLC",
+  "RT",
+  "Multi-function Relay With serial DNP"
+];
 
 export default function AutoCompleteInputComponent() {
   const [asset, setAsset] = useRecoilState<string>(assetState);
