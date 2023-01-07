@@ -2,7 +2,6 @@ import { atom, selector } from "recoil";
 import { v1 } from "uuid";
 import { assets, attackCase, LASM, pathWay } from "../config";
 import { acSelectorType, pwType } from "../types";
-import { attackCaseType, CharacterType, pathWayType } from "../types/index";
 
 export const assetState = atom<string>({
   key: `assetState/${v1()}`,
