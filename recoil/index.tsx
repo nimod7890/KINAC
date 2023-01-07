@@ -1,7 +1,7 @@
 import { connected } from "process";
 import { atom, selector } from "recoil";
 import { v1 } from "uuid";
-import { assets, attackCase, LASM, pathWay } from "../config";
+import { assets, attackCase, LASM, pathWay } from "../config/config";
 import { acSelectorType, description, pwType } from "../types";
 
 export const assetState = atom<string>({

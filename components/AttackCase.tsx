@@ -21,27 +21,28 @@ export default function AttackCase() {
             >
               {`◼ ${attack[0]}`}
             </Text>
-            {attack[1].map((c, j) => (
-              <Box
-                key={`Box${i}${j}`}
-                p={2}
-                m={1}
-                ml={5}
-                borderRadius="5px"
-                borderWidth={"1px"}
-                fontWeight={"normal"}
-                color="black"
-                fontSize={13}
-              >
-                <Text>Description: {c[0]}</Text>
-                {c[1] != "" && (
-                  <>
-                    <Divider m={1} />
-                    <Text>result: {c[1]}</Text>
-                  </>
-                )}
-              </Box>
-            ))}
+            {typeof attack[1] == "object" &&
+              attack[1].map((c, j) => (
+                <Box
+                  key={`Box${i}${j}`}
+                  p={2}
+                  m={1}
+                  ml={5}
+                  borderRadius="5px"
+                  borderWidth={"1px"}
+                  fontWeight={"normal"}
+                  color="black"
+                  fontSize={13}
+                >
+                  <Text>Description: {c[0]}</Text>
+                  {c[1] != "" && (
+                    <>
+                      <Divider m={1} />
+                      <Text>result: {c[1]}</Text>
+                    </>
+                  )}
+                </Box>
+              ))}
           </>
         ))}
     </Text>

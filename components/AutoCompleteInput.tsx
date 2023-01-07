@@ -5,7 +5,7 @@ import {
   AutoCompleteItem,
   AutoCompleteList
 } from "@choc-ui/chakra-autocomplete";
-import { assets } from "../config";
+import { assets } from "../config/config";
 import { useRecoilState } from "recoil";
 import {
   assetState,
