@@ -1,11 +1,11 @@
-import { Flex, FormControl, FormLabel } from "@chakra-ui/react";
+import { FormControl, FormLabel } from "@chakra-ui/react";
 import {
   AutoComplete,
   AutoCompleteInput,
   AutoCompleteItem,
   AutoCompleteList
 } from "@choc-ui/chakra-autocomplete";
-import { assets } from "../config";
+import { assets } from "../config/config";
 import { useRecoilState } from "recoil";
 import {
   assetState,
