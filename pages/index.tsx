@@ -32,20 +32,28 @@ export default function Home() {
     <Layout>
       <Stack spacing={7}>
         <AutoCompleteInputComponent />
-        <DeviceRadioGroup />
-        <CharacterRadioGroup />
-        {character.length == 2 && (
-          <Button
-            w={200}
-            alignSelf="end"
-            colorScheme={"facebook"}
-            onClick={onOpen}
-            _active={{
-              transform: "scale(0.98)"
-            }}
-          >
-            Submit
-          </Button>
+        {asset && (
+          <>
+            <DeviceRadioGroup />
+            {device !== 0 && (
+              <>
+                <CharacterRadioGroup />
+                {character.length == 2 && (
+                  <Button
+                    w={200}
+                    alignSelf="end"
+                    colorScheme={"facebook"}
+                    onClick={onOpen}
+                    _active={{
+                      transform: "scale(0.98)"
+                    }}
+                  >
+                    Submit
+                  </Button>
+                )}
+              </>
+            )}
+          </>
         )}
         <Modal
           closeOnOverlayClick={false}
