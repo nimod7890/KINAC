@@ -13,13 +13,13 @@ import {
   onCllickState,
   pathwayState
 } from "../recoil";
-import { CharacterType } from "../types";
+import { CharacterType, pwType } from "../types";
 
 export default function CharacterRadioGroup() {
   const characters = useRecoilValue<CharacterType>(characterSelector);
   const [onClickList, setOnclick] = useRecoilState<boolean[]>(onCllickState);
   const [character, setCharacter] = useRecoilState<string[]>(characterState);
-  const [pathwayKey, setPathwayKey] = useRecoilState<string[]>(pathwayState);
+  const [pathwayKey, setPathwayKey] = useRecoilState<pwType>(pathwayState);
 
   const falseList = Array.from({ length: characters.length }, (v, i) => false);
 
@@ -68,8 +68,8 @@ export default function CharacterRadioGroup() {
                       colorScheme="facebook"
                       value={`${v[0]}`}
                       onChange={(e) => {
-                        setCharacter([...character, v[0]]);
-                        setPathwayKey(v[1]);
+                        setCharacter([c[0], v[0]]);
+                        setPathwayKey([v[1], v[2]]);
                       }}
                     >
                       {v[0]}

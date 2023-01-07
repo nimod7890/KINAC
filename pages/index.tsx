@@ -17,18 +17,14 @@ import AutoCompleteInputComponent from "../components/AutoCompleteInput";
 import DeviceRadioGroup from "../components/DeviceRadioGroup";
 import CharacterRadioGroup from "../components/CharacterRadioGroup";
 import { useRecoilValue } from "recoil";
-import {
-  assetState,
-  characterState,
-  deviceState,
-  pathwaySelector
-} from "../recoil";
+import { assetState, characterState, deviceState } from "../recoil";
+import AttackPathway from "../components/AttackPathway";
+import AttackCase from "../components/AttackCase";
 
 export default function Home() {
   const asset = useRecoilValue<string>(assetState);
   const device = useRecoilValue<number>(deviceState);
   const character = useRecoilValue<string[]>(characterState);
-  const pathway = useRecoilValue<string[]>(pathwaySelector);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -63,33 +59,24 @@ export default function Home() {
           closeOnOverlayClick={false}
           onClose={onClose}
           isOpen={isOpen}
-          size="md"
+          size="2xl"
           isCentered
         >
           <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(3px)" />
-          <ModalContent>
+          <ModalContent maxH={"80%"}>
             <ModalHeader fontWeight={"extrabold"} color="facebook.800">
               {asset}
             </ModalHeader>
             <ModalCloseButton />
-            <ModalBody>
+            <ModalBody overflow={"scroll"}>
               <Text fontSize={14} fontWeight={"hairline"}>
                 구분: {device == 1 ? "Hardware" : "Software"}
                 <br />
                 특성: {character[0]} - {character[1]}
               </Text>
               <Divider mt={3} mb={4} borderColor="#385898" />
-              <Text fontWeight={"bold"} color="facebook.800" pb={5}>
-                Attack Pathway
-                {pathway.map((p, i) => (
-                  <Text fontWeight={"normal"} color="black" key={`key${i}`}>
-                    {p}
-                  </Text>
-                ))}
-              </Text>
-              <Text fontWeight={"bold"} color="facebook.800">
-                Attack Case
-              </Text>
+              <AttackPathway />
+              <AttackCase />
             </ModalBody>
             <ModalFooter>
               <Button colorScheme={"facebook"} onClick={onClose}>
