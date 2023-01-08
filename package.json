@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "next build && next export",
-    "deploy": "git add -f out/ && git commit -m \"deploy to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",
