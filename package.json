@@ -32,6 +32,5 @@
   },
   "devDependencies": {
     "@types/uuid": "^9.0.0"
-  },
-  "homepages": "https://nimod7890.github.io/KINAC"
+  }
 }
