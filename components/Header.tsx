@@ -28,10 +28,10 @@ export default function Header() {
             pr="1"
           />
           <Text fontSize={"xl"} fontWeight={600} color="gray.500">
-            KINAC
+            Attack Case Generation Tool
           </Text>
         </Center>
-        <Center>
+        {/* <Center>
           <Stack direction={{ base: "row", sm: "row" }} align="start">
             <Link href="https://github.com/nimod7890/KINAC">
               <Button
@@ -46,7 +46,7 @@ export default function Header() {
               </Button>
             </Link>
           </Stack>
-        </Center>
+        </Center> */}
       </Stack>
     </Center>
   );

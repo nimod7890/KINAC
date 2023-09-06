@@ -1,4 +1,4 @@
-import { Flex, Stack } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 import { LayoutDefaultProps } from "../types";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutDefaultProps) {
         direction="column"
         justify="center"
         align="center"
-        minH="89vh"
+        minH="95vh"
       >
         {children}
       </Flex>
