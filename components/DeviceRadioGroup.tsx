@@ -1,31 +1,25 @@
-import { Radio, RadioGroup, Stack } from "@chakra-ui/react";
-import { useRecoilState } from "recoil";
-import { characterState, deviceState, onCllickState } from "../recoil";
+import { Radio, FormControlLabel } from "@mui/material";
+import { FlexCenter } from "./FlexBox";
 
-export default function DeviceRadioGroup() {
-  const [device, setDevice] = useRecoilState<number>(deviceState);
-  const [onClickList, setOnclick] = useRecoilState<boolean[]>(onCllickState);
-  const [character, setCharacter] = useRecoilState<string[]>(characterState);
-
+export default function DeviceRadioGroup({
+  device,
+  setDevice,
+}: {
+  device: number;
+  setDevice: (device: number) => void;
+}) {
   return (
-    <RadioGroup
-      alignSelf={"center"}
-      textTransform={"capitalize"}
-      value={device.toString()}
-      onChange={(value) => {
-        setDevice(Number(value));
-        setOnclick([]);
-        setCharacter([]);
-      }}
-    >
-      <Stack spacing={50} direction="row">
-        <Radio size="lg" colorScheme="facebook" value="1">
-          hardware
-        </Radio>
-        <Radio size="lg" colorScheme="facebook" value="2">
-          software
-        </Radio>
-      </Stack>
-    </RadioGroup>
+    <FlexCenter sx={{ gap: "20px" }}>
+      <FormControlLabel
+        label="hardware"
+        control={<Radio checked={device === 1} />}
+        onClick={() => setDevice(1)}
+      />
+      <FormControlLabel
+        label="software"
+        control={<Radio checked={device === 2} />}
+        onClick={() => setDevice(2)}
+      />
+    </FlexCenter>
   );
 }

@@ -1,22 +1,22 @@
-import { Text } from "@chakra-ui/react";
-import { useRecoilValue } from "recoil";
-import { pathwaySelector } from "../recoil";
+import { pathWay } from "../config";
+import { PwType } from "../types";
+import { Typography } from "@mui/material";
 
-export default function AttackPathway() {
-  const pathway = useRecoilValue<string[]>(pathwaySelector);
+export default function AttackPathway({ pathway }: { pathway: PwType }) {
   return (
-    <Text fontWeight={"bold"} color="facebook.800" pb={5}>
+    <Typography fontWeight="bold">
       Attack Pathway
-      {pathway.map((p, i) => (
-        <Text
-          fontSize={14}
-          fontWeight={"normal"}
-          color="black"
-          key={`pathway${i}`}
-        >
-          - {p}
-        </Text>
-      ))}
-    </Text>
+      {(() => {
+        const selectedPathway: string[] = [];
+        for (const key of pathway[1]) {
+          pathWay[key] != undefined && selectedPathway.push(pathWay[key]);
+        }
+        let result = "";
+        if (selectedPathway.length >= 1) {
+          result += `: ${selectedPathway[0]}`;
+        }
+        return result + selectedPathway.slice(1).map((path) => ` - ${path}`);
+      })()}
+    </Typography>
   );
 }

@@ -7,6 +7,7 @@ export default function Footer() {
       role="footerinfo"
       px={4}
       py={4}
+      height="56px"
       position="relative"
       backgroundColor={"gray.50"}
       boxShadow="xs"
@@ -17,7 +18,12 @@ export default function Footer() {
         w={{ base: "full", xl: "container.xl" }}
         alignContent="center"
       >
-        <Text color="gray.600" fontSize={"xs"} fontWeight={600} textAlign="center">
+        <Text
+          color="gray.600"
+          fontSize={"xs"}
+          fontWeight={600}
+          textAlign="center"
+        >
           Attack Case Generation Tool
         </Text>
       </Stack>

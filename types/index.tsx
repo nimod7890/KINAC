@@ -3,7 +3,7 @@ export interface LayoutDefaultProps {
 }
 export type CharacterType = [string, [string, string, string[]][]][];
 
-export type pathWayType = {
+export type PathWayType = {
   [index: string]: string;
   PS: string;
   WN: string;
@@ -17,15 +17,23 @@ export type pathWayType = {
   "SW/F": string;
 };
 
-export type pwType = [string, string[]];
+export type PwType = [string, string[]];
 
-export type description = string | string[][];
+export type Description = string | string[][];
 
-export type attackCaseType = {
-  [index: string]: description;
-  PS: description;
-  SC: description;
-  PM: description;
+export type AttackCaseType = {
+  [index: string]: Description;
+  PS: Description;
+  SC: Description;
+  PM: Description;
 };
 
-export type acSelectorType = [string | [string, description]];
+export type acSelectorType = [string | [string, Description]];
+
+export type AssetType = {
+  asset: string;
+  device: number;
+  pathway: PwType;
+  characters: string[];
+  selectedList: boolean[];
+};

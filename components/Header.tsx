@@ -1,17 +1,15 @@
-import { Button, Center, Icon, Stack, Text } from "@chakra-ui/react";
-import Link from "next/link";
-import { AiFillGithub, AiOutlineFileProtect } from "react-icons/ai";
+import { Center, Icon, Stack, Text } from "@chakra-ui/react";
+import { AiOutlineFileProtect } from "react-icons/ai";
 export default function Header() {
   return (
     <Center
-      as="nav"
-      role={"navigation"}
-      minH="14"
+      height="56px"
       width="full"
       px={4}
       position={"fixed"}
       backgroundColor={"gray.50"}
       boxShadow={"xs"}
+      zIndex={999}
     >
       <Stack
         direction={"row"}
