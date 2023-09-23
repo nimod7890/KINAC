@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Autocomplete, TextField, Stack, Button } from "@mui/material";
+import { Autocomplete, TextField, Button, Stack } from "@mui/material";
 import { AssetType, PwType } from "../types";
 import CharacterRadioGroup from "./CharacterRadioGroup";
 import DeviceRadioGroup from "./DeviceRadioGroup";
@@ -10,7 +10,7 @@ import { Box } from "@chakra-ui/react";
 
 const initialAssetObject = {
   asset: "",
-  device: 0,
+  device: 1,
   pathway: ["", []] as PwType,
   characters: [],
   selectedList: [],
@@ -23,10 +23,12 @@ export const Layout = () => {
     <Box sx={{ width: "100vw", height: "100vh" }}>
       <Header />
       <Stack
-        spacing={3}
+        spacing={2}
         sx={{
+          alignItems: "center",
+          width: "100%",
           height: "calc(100% - 56px)",
-          paddingTop: "50px",
+          paddingTop: "110px",
           backgroundColor: "#FFFFFF",
         }}
       >
@@ -45,7 +47,7 @@ export const Layout = () => {
           onChange={(_e, newAsset) =>
             setAssetObject({
               asset: newAsset as string,
-              device: 0,
+              device: 1,
               characters: [],
               selectedList: [],
               pathway: ["", []],
