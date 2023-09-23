@@ -15,42 +15,48 @@ export const assets: string[] = [
 export const attackCase: AttackCaseType = {
   PS: [
     [
-      "유지보수 중 오염된 Maintenance가 연결되어 의도하지 않는 값으로  Configuration/Environment value 등 변경",
-      "조작된 Configuration Value를 전송/safety components 환경 값 오인",
+      "Changing configuration, environment values, etc. to unintended values due to a connection of contaminated Maintenance during maintenance",
+      "Transmitting manipulated configuration values/ Misperceiving safety components environment values",
     ],
     [
-      "유지보수 중 오염된 Maintenance가 연결되어 의도하지 않는 값으로 Configuration 등 변경",
-      "의도하지 않은 Configuration Value로 변경",
+      "Changing configuration, etc. to unintended values due to a connection of contaminated Maintenance during maintenance",
+      "Changing to an unintended configuration value",
     ],
     [
-      "접속 권한을 가진 내부자가 의도적으로 잘못된 Configuration 등 변경",
-      "의도하지 않은 Configuration Value로 변경",
+      "An insider with access intentionally changing incorrect Configuration, Environment values, etc.",
+      "Changing to an unintended configuration value/misperceiving safety components environment value",
     ],
-    ["신뢰할 수 없는 기기 접근으로 저장소 데이터 탈취", "중요 데이터 유출"],
-    ["정책을 위반한 내부자가 공유한 물리적 접근 보호 매커니즘을 통해 접근", ""],
+    [
+      "Stealing storage data by accessing with untrusted device",
+      "Critical data leaking",
+    ],
+    [
+      "Accessing through a physical access protection mechanism shared by the insider who violated the policy",
+      "",
+    ],
   ],
   PM: [
     [
-      "공급 중 공격코드가 포함된 Maintenance tool 통신 펌웨어 탑재하여 의도하지 않은 값으로 Configuration/Environment value 등 변경",
-      "조작된 Configuration Value를 전송/safety components 환경 값 오인",
+      "Changing configuration, environment values to unintended values, etc. as a result of having maintenance tool communication firmware containing attack code during supply",
+      "Transmitting manipulated configuration values/ Misperceiving safety components environment values",
     ],
     [
-      "공격자가 조작한 화면 이미지를 화면에 띄우도록 오염된 값을 전송하여 컨트롤러 뷰 조작 ",
-      "부적절한 제어 행위 초래",
+      "Manipulating a controller view by sending a tainted value to display an attacker-manipulated screen image",
+      "Result in inadequate controls",
     ],
   ],
   SC: [
     [
-      "접속 권한을 가진 내부자가 의도적으로 잘못된  Configuration/Environment value 등 변경",
-      "의도하지 않은 Configuration Value로 변경/safety components 환경 값 오인",
+      "An insider with access intentionally changing incorrect Configuration, Environment values, etc.",
+      "Changing to an unintended configuration value/misperceiving safety components environment value",
     ],
     [
-      "내부자의 접근으로 장비를 물리적 삭제(갈취)",
-      "safety components 가동 및 시스템 정지",
+      "Physical removal of equipment with insider access (extortion)",
+      "Starting up safety components and shutting down the system",
     ],
     [
-      "Disconnect power supply로 인한 전원 공급 차단",
-      "비상전력망 가동 및 시스템 정지",
+      "Power supply disconnection",
+      "Running emergency power grid and shutting down the system",
     ],
   ],
 };
