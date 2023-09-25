@@ -9,8 +9,23 @@ npm install
 npm run dev
 ```
 
-#### Preview
+#### Features
 
+
+#### Usage
+[Attack Case Creation]
+1. Enter the name of the asset you wish to add.
+2. Choose the asset type.
+3. Select the characteristic.
+4. Check the generated scenario.
+5. If there are vulnerabilities, attack methods, or impacts to add, proceed with the 'setting'.
+
+[Attack Case Management]
+1. Click on the '+' symbol.
+2. Enter the type of data, name, and description you wish to add.
+3. Input the data you wish to map. (For pathway select characteristic, for vulnerability select pathway, for technique select vulnerability, for impact select technique).
+
+#### Preview
 ![1](preview/1.png)
 
 ![2](preview/2.png)
