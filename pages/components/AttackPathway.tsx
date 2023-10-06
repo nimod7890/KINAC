@@ -1,4 +1,4 @@
-import { pathWay } from "../config";
+import { pathWay } from "../../config";
 import { PwType } from "../types";
 import { Typography } from "@mui/material";
 

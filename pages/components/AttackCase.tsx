@@ -1,8 +1,7 @@
-import { Box } from "@chakra-ui/react";
 import { PwType, acSelectorType } from "../types";
 import { useMemo } from "react";
-import { attackCase, pathWay } from "../config";
-import { Divider, Typography } from "@mui/material";
+import { attackCase, pathWay } from "../../config";
+import { Box, Divider, Typography } from "@mui/material";
 
 export default function AttackCase({ pathway }: { pathway: PwType }) {
   const attackcase = useMemo(() => {
@@ -35,15 +34,15 @@ export default function AttackCase({ pathway }: { pathway: PwType }) {
             {typeof attack[1] == "object" &&
               attack[1].map((c, j) => (
                 <Box
+                  sx={{
+                    padding: 2,
+                    margin: 1,
+                    marginLeft: 5,
+                    borderRadius: "5px",
+                    border: "1px solid black",
+                    fontSize: "13px",
+                  }}
                   key={`Box${i}${j}`}
-                  p={2}
-                  m={1}
-                  ml={5}
-                  borderRadius="5px"
-                  borderWidth={"1px"}
-                  fontWeight={"normal"}
-                  color="black"
-                  fontSize={13}
                 >
                   <Typography>Description: {c[0]}</Typography>
                   {c[1] != "" && (

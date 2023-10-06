@@ -1,4 +1,5 @@
-import { Center, Stack, Text } from "@chakra-ui/react";
+import { Center, Stack } from "@chakra-ui/react";
+import { Typography } from "@mui/material";
 
 export default function Footer() {
   return (
@@ -18,14 +19,14 @@ export default function Footer() {
         w={{ base: "full", xl: "container.xl" }}
         alignContent="center"
       >
-        <Text
-          color="gray.600"
+        <Typography
+          sx={{ color: "gray" }}
           fontSize={"xs"}
           fontWeight={600}
           textAlign="center"
         >
           Attack Case Generation Tool
-        </Text>
+        </Typography>
       </Stack>
     </Center>
   );

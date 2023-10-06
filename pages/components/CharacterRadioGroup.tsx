@@ -1,7 +1,7 @@
 import { AssetType } from "../types";
 import { useMemo } from "react";
 import { FlexBox } from "./FlexBox";
-import { assets, LASM } from "../config";
+import { assets, LASM } from "../../config";
 import { Button, Box, Divider, FormControlLabel, Radio } from "@mui/material";
 
 export default function CharacterRadioGroup({

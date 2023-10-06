@@ -12,15 +12,6 @@ export const theme = createTheme({
     primary: {
       main: "#6E7481",
     },
-    // secondary: {
-    //   main: neutral[10],
-    // },
-    // error: {
-    //   main: error[60],
-    // },
-    // warning: {
-    //   main: alert[60],
-    // },
   },
 });
 

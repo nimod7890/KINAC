@@ -1,4 +1,8 @@
-import { AttackCaseType, CharacterType, PathWayType } from "./types/index";
+import {
+  AttackCaseType,
+  CharacterType,
+  PathWayType,
+} from "./pages/types/index";
 export const assets: string[] = [
   "Limit/Alarm Switch Module",
   "Pressure Transmitters",

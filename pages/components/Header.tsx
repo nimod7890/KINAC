@@ -29,22 +29,6 @@ export default function Header() {
             Attack Case Generation Tool
           </Text>
         </Center>
-        {/* <Center>
-          <Stack direction={{ base: "row", sm: "row" }} align="start">
-            <Link href="https://github.com/nimod7890/KINAC">
-              <Button
-                py={4}
-                variant={"solid"}
-                colorScheme="gray"
-                leftIcon={<AiFillGithub />}
-                size={{ base: "xs", md: "sm" }}
-                px={4}
-              >
-                Github
-              </Button>
-            </Link>
-          </Stack>
-        </Center> */}
       </Stack>
     </Center>
   );

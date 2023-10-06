@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Autocomplete, TextField, Button, Stack } from "@mui/material";
+import { Box, Autocomplete, TextField, Button, Stack } from "@mui/material";
 import { AssetType, PwType } from "../types";
 import CharacterRadioGroup from "./CharacterRadioGroup";
 import DeviceRadioGroup from "./DeviceRadioGroup";
 import { ResultModal } from "./ResultModal";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Box } from "@chakra-ui/react";
 
 const initialAssetObject = {
   asset: "",
