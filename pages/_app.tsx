@@ -13,6 +13,13 @@ export const theme = createTheme({
       main: "#6E7481",
     },
   },
+  components: {
+    MuiStack: {
+      defaultProps: {
+        spacing: 3,
+      },
+    },
+  },
 });
 
 export default function App({ Component, pageProps }: AppProps) {

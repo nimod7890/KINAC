@@ -67,14 +67,14 @@ export const attackCase: AttackCaseType = {
 
 export const LASM: CharacterType[] = [
   [
-    ["Firmware Code", [["Storage", "x", ["PM/D", "PM/S"]]]],
+    ["Firmware Code", [["Storage", "No", ["PM/D", "PM/S"]]]],
     [
       "HMI",
       [
-        ["Local Integral", "x", ["PS"]],
-        ["Remote", "x", ["PS"]],
+        ["Local Integral", "No", ["PS"]],
+        ["Remote", "No", ["PS"]],
         ["Maintenance tool connection", "가능", ["PS"]],
-        ["Access Restriction", "x", ["PS"]],
+        ["Access Restriction", "No", ["PS"]],
       ],
     ],
     [
@@ -88,40 +88,40 @@ export const LASM: CharacterType[] = [
     [
       "Communication",
       [
-        ["LAN (IEEE 802.3)", "x", ["WN/E"]],
-        ["Serial Port (RS-232)", "x", ["WN/S"]],
+        ["LAN (IEEE 802.3)", "No", ["WN/E"]],
+        ["Serial Port (RS-232)", "No", ["WN/S"]],
       ],
     ],
-    ["Audit/Event Log", [["All", "x", ["PS", "WN", "PM"]]]],
+    ["Audit/Event Log", [["All", "No", ["PS", "WN", "PM"]]]],
     [
       "Connector",
       [["Analog, Contact, Parse I/O Signal", "있을 수 있음", ["PS", "PM"]]],
     ],
-    ["Interface", [["Console", "x", ["PS", "PM"]]]],
+    ["Interface", [["Console", "No", ["PS", "PM"]]]],
   ],
   [
-    ["Port", [["All", "x", ["WN"]]]],
+    ["Port", [["All", "No", ["WN"]]]],
     [
       "HMI",
       [
-        ["Software Access Enforcement", "x", ["WN"]],
+        ["Software Access Enforcement", "No", ["WN"]],
         [
           "Configuration Setting 변경",
           "Local integral HMI를 통해 가능",
           ["WN"],
         ],
-        ["Operational Parameter 변경", "x", ["WN"]],
-        ["Multi-users & individual authentication", "x", ["WN"]],
+        ["Operational Parameter 변경", "No", ["WN"]],
+        ["Multi-users & individual authentication", "No", ["WN"]],
       ],
     ],
-    ["File system", [["Externally accessible file system", "x", ["SW"]]]],
+    ["File system", [["Externally accessible file system", "No", ["SW"]]]],
     ["Data Extraction", [["USB/Memory Card Interface", "있음", ["PM"]]]],
-    ["Firmware", [["Firmware Update", "x", ["SW/F"]]]],
-    ["3rd party software", [["추가/삭제", "x", ["SW/F"]]]],
-    ["Communication", [["통신기능", "x", ["WN", "WL"]]]],
+    ["Firmware", [["Firmware Update", "No", ["SW/F"]]]],
+    ["3rd party software", [["추가/삭제", "No", ["SW/F"]]]],
+    ["Communication", [["통신기능", "No", ["WN", "WL"]]]],
     [
       "Audit/Event Log",
-      [["Audit/Event Log 저장 기능", "x", ["PS", "WN", "PM"]]],
+      [["Audit/Event Log 저장 기능", "No", ["PS", "WN", "PM"]]],
     ],
   ],
 ];
