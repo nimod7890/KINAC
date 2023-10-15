@@ -1,5 +1,7 @@
-import { Center, Icon, Stack, Text } from "@chakra-ui/react";
+import { Center, Icon } from "@chakra-ui/react";
 import { AiOutlineFileProtect } from "react-icons/ai";
+import { FlexSpaceBetween } from "./FlexBox";
+import { Typography } from "@mui/material";
 export default function Header() {
   return (
     <Center
@@ -11,25 +13,18 @@ export default function Header() {
       boxShadow={"xs"}
       zIndex={999}
     >
-      <Stack
-        direction={"row"}
-        w={{ base: "full", xl: "container.xl" }}
-        justifyContent={"space-between"}
-        verticalAlign="center"
-      >
-        <Center>
-          <Icon
-            as={AiOutlineFileProtect}
-            fontSize={"2xl"}
-            color="gray.500"
-            ml={"13px"}
-            pr="1"
-          />
-          <Text fontSize={"xl"} fontWeight={600} color="gray.500">
-            Attack Case Generation Tool
-          </Text>
-        </Center>
-      </Stack>
+      <FlexSpaceBetween>
+        <Icon
+          as={AiOutlineFileProtect}
+          fontSize={"2xl"}
+          color="gray"
+          ml={"13px"}
+          pr="1"
+        />
+        <Typography fontSize={"20px"} fontWeight={600} color="gray">
+          Attack Case Generation Tool
+        </Typography>
+      </FlexSpaceBetween>
     </Center>
   );
 }

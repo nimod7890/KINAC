@@ -1,29 +1,46 @@
-import { Divider, Typography, Stack } from "@mui/material";
+import { useMemo } from "react";
+import { AttackCaseSchema, PathwaysSchema } from "../@types";
 import { ModalLayout } from "./ModalLayout";
-import AttackCase from "./AttackCase";
-import AttackPathway from "./AttackPathway";
-import { AssetType } from "../types";
+import { Typography } from "@mui/material";
 
-export const ResultModal = ({
-  assetObject,
+export default function ResultModal({
+  attackCase,
   onClose,
 }: {
-  assetObject: AssetType;
+  attackCase: AttackCaseSchema;
   onClose: () => void;
-}) => {
-  const { asset, device, pathway, characters } = assetObject;
+}) {
+  const pathways = useMemo(() => {
+    const pathways: PathwaysSchema = attackCase.attributes
+      .map((attribute) => attribute.character.pathways)
+      .flat();
+    return pathways;
+  }, [attackCase.attributes]);
+
   return (
-    <ModalLayout title={asset} onClose={onClose}>
-      <Stack spacing={2}>
-        <Typography fontWeight="hairline">
-          구분: {device === 1 ? "Hardware" : "Software"}
-          <br />
-          특성: {characters[0]} - {characters[1]}
-        </Typography>
-        <Divider />
-        <AttackPathway pathway={pathway} />
-        <AttackCase pathway={pathway} />
-      </Stack>
+    <ModalLayout title="Attack Case" onClose={onClose}>
+      <Typography>Target: {attackCase.target}</Typography>
+      <Typography>Type: {attackCase.type}</Typography>
+      <Typography>Characters</Typography>
+      {attackCase.attributes.map((attribute, index) => (
+        <>
+          <Typography>
+            {index + 1}. {attribute.name}-{attribute.character.name}
+          </Typography>
+          <Typography>Available Value: {attribute.character.value}</Typography>
+        </>
+      ))}
+      <Typography>Pathways: {pathways.join(", ")}</Typography>
+      {/* <Stack spacing={2}>
+          <Typography fontWeight="hairline">
+            구분: {device === 1 ? "Hardware" : "Software"}
+            <br />
+            특성: {characters[0]} - {characters[1]}
+          </Typography>
+          <Divider />
+          <AttackPathway pathway={pathway} />
+          <AttackCase pathway={pathway} />
+        </Stack> */}
     </ModalLayout>
   );
-};
+}
