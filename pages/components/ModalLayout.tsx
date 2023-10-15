@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  Stack,
 } from "@mui/material";
 import type { DialogTitleProps } from "@mui/material";
 import type { FC, ReactNode } from "react";
@@ -78,7 +79,7 @@ export const ModalLayout: FC<ModalLayoutProps> = ({
         {title}
       </ModalHeader>
       <DialogContent sx={{ padding, height: contentHeight }}>
-        {children}
+        <Stack spacing={1}>{children}</Stack>
       </DialogContent>
       {hideFooter ? null : (
         <DialogActions sx={{ padding }}>

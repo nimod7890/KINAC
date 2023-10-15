@@ -24,6 +24,7 @@ export const theme = createTheme({
     },
   },
 });
+const width = "1440px";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -33,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Box
           sx={{
             width: "100vw",
-            minWidth: "1200px",
+            minWidth: width,
             minHeight: "100%",
             backgroundColor: "#FFFFFF",
           }}
@@ -44,8 +45,8 @@ export default function App({ Component, pageProps }: AppProps) {
               spacing={4}
               sx={{
                 minHeight: "100%",
-                width: "1200px",
-                minWidth: "1200px",
+                width,
+                minWidth: width,
                 padding: "100px 1rem",
               }}
             >

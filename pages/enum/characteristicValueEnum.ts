@@ -3,13 +3,13 @@ import { z } from "zod";
 export const characteristicValueEnum = z.enum([
   "Yes",
   "No",
-  "A",
-  "N/A",
+  "Available",
+  "Unavailable",
 ] as const);
 export const Yes = characteristicValueEnum.Enum.Yes;
 export const No = characteristicValueEnum.Enum.No;
-export const Available = characteristicValueEnum.Enum.A;
-export const Unavailable = characteristicValueEnum.Enum["N/A"];
+export const Available = characteristicValueEnum.Enum.Available;
+export const Unavailable = characteristicValueEnum.Enum.Unavailable;
 export type ValueEnum =
   | typeof Yes
   | typeof No
