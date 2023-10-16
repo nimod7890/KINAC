@@ -1,5 +1,4 @@
-import { Stack } from "@chakra-ui/react";
-import { Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { ReactNode } from "react";
 
 const width = "400px";
@@ -17,11 +16,7 @@ export default function InfoBox({
   };
   children: ReactNode;
 }) {
-  const {
-    isBorderExist = true,
-    boxWidth = width,
-    stackDirection = "column",
-  } = configs;
+  const { isBorderExist = false, boxWidth = width, stackDirection = "column" } = configs;
   return (
     <Stack
       spacing={1}

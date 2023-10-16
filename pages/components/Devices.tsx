@@ -12,7 +12,7 @@ export default function Devices({
 }) {
   const devices: DevicesSchema = [Hardware, Software];
   return (
-    <InfoBox title="Device" configs={{ isBorderExist: false }}>
+    <InfoBox title="Device">
       <Stack direction="row" spacing={5} sx={{ height: 56 }}>
         {devices.map((device) => {
           return (

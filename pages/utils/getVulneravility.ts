@@ -5,9 +5,7 @@ import {
   VulneravilitySchema,
 } from "../@types";
 
-export function getVulneravilitiesOfPathway(
-  pathway: PathwaySchema
-): VulneravilitiesSchema {
+export function getVulneravilitiesOfPathway(pathway: PathwaySchema): VulneravilitiesSchema {
   switch (pathway) {
     case "WN/T":
       return ["V1"];
@@ -21,10 +19,11 @@ export function getVulneravilitiesOfPathway(
       return [];
   }
 }
-export function getVulneravilitiesOfPathways(
-  pathways: PathwaysSchema
-): VulneravilitiesSchema {
-  return pathways.map((pathway) => getVulneravilitiesOfPathway(pathway)).flat();
+export function getVulneravilitiesOfPathways(pathways: PathwaysSchema): VulneravilitiesSchema {
+  return pathways
+    .map((pathway) => getVulneravilitiesOfPathway(pathway))
+    .flat()
+    .filter((pathway) => pathway);
 }
 export function getFullVulneravilityName(vulneravility: VulneravilitySchema) {
   switch (vulneravility) {
@@ -40,5 +39,7 @@ export function getFullVulneravilityName(vulneravility: VulneravilitySchema) {
       return "Out of Bounds Read";
     case "V6":
       return "Bypass the digital signature check";
+    default:
+      return "";
   }
 }

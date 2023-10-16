@@ -10,7 +10,7 @@ export default function Target({
   onTargetChange: (target: TargetSchema) => void;
 }) {
   return (
-    <InfoBox title="Asset Name" configs={{ isBorderExist: false }}>
+    <InfoBox title="Asset Name">
       <OutlinedInput
         value={selectedTarget}
         onChange={(event) => onTargetChange(event.target.value)}

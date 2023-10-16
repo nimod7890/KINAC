@@ -14,7 +14,7 @@ export default function Attributes({
   const { attributes, device } = attackCase;
 
   return (
-    <InfoBox title="Characteristic">
+    <InfoBox title="Characteristic" configs={{ isBorderExist: true }}>
       <Grid container spacing={1} columns={{ xs: 3, sm: 6, md: 12 }}>
         {getAttributes(device).map((attribute, index) => (
           <Attribute key={`${attribute}-${index}`} attribute={attribute}>
@@ -36,21 +36,9 @@ export default function Attributes({
   );
 }
 
-const Attribute = ({
-  attribute,
-  children,
-}: {
-  attribute: string;
-  children: ReactNode;
-}) => {
+const Attribute = ({ attribute, children }: { attribute: string; children: ReactNode }) => {
   return (
-    <Grid
-      item
-      xs={2}
-      sm={4}
-      md={4}
-      sx={{ width: "max-content", minHeight: "120px" }}
-    >
+    <Grid item xs={2} sm={4} md={4} sx={{ width: "max-content", minHeight: "120px" }}>
       <Stack spacing={2} sx={{ padding: "0 5px 20px 5px" }}>
         <Button sx={{ width: "100%" }} variant="contained">
           {attribute}

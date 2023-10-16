@@ -15,10 +15,11 @@ export function getImpactsOfTechnique(technique: TecheniqueSchema): string[] {
   }
 }
 
-export function getImpactsOfTechniques(
-  techniques: TecheniquesSchema
-): string[] {
-  return techniques.map((technique) => getImpactsOfTechnique(technique)).flat();
+export function getImpactsOfTechniques(techniques: TecheniquesSchema): string[] {
+  return techniques
+    .map((technique) => getImpactsOfTechnique(technique))
+    .flat()
+    .filter((techique) => techique);
 }
 
 export function getFullImpactName(impact: string): string {

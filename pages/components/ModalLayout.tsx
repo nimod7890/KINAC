@@ -16,7 +16,6 @@ type ModalLayoutProps = {
   title?: string | ReactNode;
   footerLeft?: ReactNode;
   footerRight?: ReactNode;
-  disabledCloseButton?: boolean;
   children: ReactNode;
   configs?: ModalConfigs | undefined;
 } & CloseActionProps;
@@ -27,8 +26,6 @@ type CloseActionProps = {
 };
 
 export type ModalConfigs = {
-  minWidth?: string;
-  maxWidth?: "xs" | "sm" | "md" | "lg";
   contentHeight?: string;
   hideFooter?: boolean;
 };
@@ -41,29 +38,12 @@ export const ModalLayout: FC<ModalLayoutProps> = ({
   onClose,
   footerLeft,
   footerRight,
-  disabledCloseButton = false,
   children,
   configs = {},
 }) => {
-  const {
-    minWidth = "fit-content",
-    maxWidth = "sm",
-    contentHeight = "max-content",
-    hideFooter = false,
-  } = configs;
+  const { contentHeight = "max-content", hideFooter = false } = configs;
   return (
-    <Dialog
-      open
-      sx={{
-        "& .MuiDialog-container": {
-          "& .MuiPaper-root": {
-            minWidth,
-          },
-        },
-      }}
-      maxWidth={maxWidth}
-      fullWidth
-    >
+    <Dialog open fullWidth maxWidth="xl">
       <ModalHeader
         onClose={onClose}
         sx={{
@@ -74,7 +54,6 @@ export const ModalLayout: FC<ModalLayoutProps> = ({
           padding: "8px",
           paddingLeft: "24px",
         }}
-        disabledCloseButton={disabledCloseButton}
       >
         {title}
       </ModalHeader>

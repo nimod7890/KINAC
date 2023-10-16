@@ -35,15 +35,15 @@ export function getTechniques(
 export function getFullTechniqueName(technique: TecheniqueSchema): string {
   switch (technique) {
     case "T1":
-      return "Exploit System Firmware Update";
+      return "[T0857] Exploit System Firmware Update";
     case "T2":
-      return "Valid Accounts";
+      return "[T0812] Valid Accounts";
     case "T3":
-      return "Denial of Service";
+      return "[T0814] Denial of Service";
     case "T4":
-      return "Supply Chain Compromise";
+      return "[T0862] Supply Chain Compromise";
     case "T5":
-      return "Exploitation for Client Execution";
+      return "[T1203] Exploitation for Client Execution";
     default:
       return "";
   }

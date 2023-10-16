@@ -1,15 +1,11 @@
-import {
-  AttackCaseSchema,
-  PathwaysSchema,
-  PathwaySchema,
-  CharacteristicSchema,
-} from "../@types";
+import { AttackCaseSchema, PathwaysSchema, PathwaySchema, CharacteristicSchema } from "../@types";
 import { ValueEnum } from "../enums/characteristicValueEnum";
 
 export function getPathways(attackCase: AttackCaseSchema): PathwaysSchema {
   const pathways: PathwaysSchema = attackCase.attributes
     .map((attribute) => attribute.character.pathways)
-    .flat();
+    .flat()
+    .filter((pathway) => pathway);
   return Array.from(new Set(pathways));
 }
 export function getFullPathwayName(pathway: PathwaySchema): string {

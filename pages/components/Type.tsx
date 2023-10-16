@@ -19,7 +19,7 @@ export default function Type({
     "Class C",
   ];
   return (
-    <InfoBox title="Type" configs={{ isBorderExist: false }}>
+    <InfoBox title="Type">
       <Select
         value={selectedType}
         renderValue={(value) => value}

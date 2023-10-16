@@ -7,6 +7,7 @@ import { FlexSpaceBetween } from "./components/FlexBox";
 
 /** Todo 
  - result modal 
+ - impact type 생성
  - 용어 정리 
  - 파일 분리 (bodylayout 생성)
  - input modal 구현
