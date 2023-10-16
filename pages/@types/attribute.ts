@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { characteristicValueEnum } from "../enum/characteristicValueEnum";
+import { characteristicValueEnum } from "../enums/characteristicValueEnum";
 import { pathwaysSchema } from "./pathway";
 
 const characteristicSchema = z.object({

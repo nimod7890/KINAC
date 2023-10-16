@@ -1,7 +1,7 @@
 import { Button, Stack } from "@mui/material";
 import { useState } from "react";
 import type { AttackCaseSchema } from "./@types";
-import { Hardware } from "./enum/deviceEnum";
+import { Hardware } from "./enums/deviceEnum";
 import { Attributes, Type, Devices, Target, ResultModal } from "./components";
 import { FlexSpaceBetween } from "./components/FlexBox";
 

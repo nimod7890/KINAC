@@ -5,8 +5,8 @@ import {
   No,
   Available,
   Unavailable,
-} from "../enum/characteristicValueEnum";
-import { getPathways } from "../utils";
+} from "../enums/characteristicValueEnum";
+import { getPathwaysFromCharacter } from "../utils";
 
 export default function Character({
   attribute,
@@ -79,7 +79,7 @@ export default function Character({
             name,
             character: {
               name: character.name,
-              pathways: getPathways({ character, value }),
+              pathways: getPathwaysFromCharacter({ character, value }),
               value,
             },
           };

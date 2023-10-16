@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { deviceEnum } from "../enum/deviceEnum";
+import { deviceEnum } from "../enums/deviceEnum";
 
 export const deviceSchema = deviceEnum;
 const devicesSchema = deviceSchema.array();
