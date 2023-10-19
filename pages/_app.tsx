@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Footer, Header } from "./components";
 import { Box, Stack } from "@mui/material";
-import { FlexCenter } from "./components/FlexBox";
+import { FlexCenter } from "./components/commons/FlexBox";
 
 export const theme = createTheme({
   palette: {

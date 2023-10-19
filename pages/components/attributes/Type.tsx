@@ -1,6 +1,6 @@
 import { Select, MenuItem, OutlinedInput } from "@mui/material";
-import { TypeSchema, TypesSchema } from "../@types";
-import { InfoBox } from ".";
+import { TypeSchema, TypesSchema } from "../../@types";
+import { InfoBox } from "..";
 
 export default function Type({
   selectedType,

@@ -1,8 +1,8 @@
 import { Grid, Stack, Button } from "@mui/material";
 import { ReactNode } from "react";
-import { AttributesSchema, AttackCaseSchema } from "../@types";
-import { getAttributes, getCharacters } from "../utils";
-import { InfoBox, Character } from ".";
+import { AttributesSchema, AttackCaseSchema } from "../../@types";
+import { getAttributes, getCharacters } from "../../utils";
+import { InfoBox, Character } from "..";
 
 export default function Attributes({
   attackCase,

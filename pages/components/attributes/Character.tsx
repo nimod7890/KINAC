@@ -1,12 +1,7 @@
 import { Typography, FormControlLabel, Stack, Radio } from "@mui/material";
-import { AttributeSchema, AttributesSchema } from "../@types";
-import {
-  Yes,
-  No,
-  Available,
-  Unavailable,
-} from "../enums/characteristicValueEnum";
-import { getPathwaysFromCharacter } from "../utils";
+import { AttributeSchema, AttributesSchema } from "../../@types";
+import { Yes, No, Available, Unavailable } from "../../enums/characteristicValueEnum";
+import { getPathwaysFromCharacter } from "../../utils";
 
 export default function Character({
   attribute,
@@ -28,13 +23,10 @@ export default function Character({
 
   function isSelectedAttribute(attribute: AttributeSchema): boolean {
     return !!attributes.find(
-      (selectedAttribute) =>
-        JSON.stringify(selectedAttribute) === JSON.stringify(attribute)
+      (selectedAttribute) => JSON.stringify(selectedAttribute) === JSON.stringify(attribute)
     );
   }
-  function findMatchingAttribute(
-    attribute: AttributeSchema
-  ): AttributeSchema | undefined {
+  function findMatchingAttribute(attribute: AttributeSchema): AttributeSchema | undefined {
     return attributes.find(
       (selectedAttribute) =>
         selectedAttribute.name === attribute.name &&
@@ -60,8 +52,7 @@ export default function Character({
       return attributes;
     }
     const newSelectedAttributes: AttributesSchema = attributes.filter(
-      (selectedAttribute) =>
-        JSON.stringify(selectedAttribute) !== JSON.stringify(attribute)
+      (selectedAttribute) => JSON.stringify(selectedAttribute) !== JSON.stringify(attribute)
     );
     if (isReturnArray) {
       return newSelectedAttributes;
@@ -87,9 +78,7 @@ export default function Character({
             <FormControlLabel
               key={`${attribute}-${character.name}-${value}`}
               label={value}
-              control={
-                <Radio checked={isSelectedAttribute(selectedAttribute)} />
-              }
+              control={<Radio checked={isSelectedAttribute(selectedAttribute)} />}
               sx={{ color: "gray", fontSize: "12px" }}
               onClick={() => onClickRadioButton(selectedAttribute)}
             />

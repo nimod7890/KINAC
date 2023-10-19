@@ -1,6 +1,6 @@
 import { Center, Icon } from "@chakra-ui/react";
 import { AiOutlineFileProtect } from "react-icons/ai";
-import { FlexSpaceBetween } from "./FlexBox";
+import { FlexSpaceBetween } from "../commons/FlexBox";
 import { Typography } from "@mui/material";
 export default function Header() {
   return (
@@ -14,13 +14,7 @@ export default function Header() {
       zIndex={999}
     >
       <FlexSpaceBetween>
-        <Icon
-          as={AiOutlineFileProtect}
-          fontSize={"2xl"}
-          color="gray"
-          ml={"13px"}
-          pr="1"
-        />
+        <Icon as={AiOutlineFileProtect} fontSize={"2xl"} color="gray" ml={"13px"} pr="1" />
         <Typography fontSize={"20px"} fontWeight={600} color="gray">
           Attack Case Generation Tool
         </Typography>

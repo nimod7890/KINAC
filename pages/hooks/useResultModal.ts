@@ -4,7 +4,7 @@ import {
   getImpactsOfTechniques,
   getPathways,
   getTechniques,
-  getVulneravilitiesOfPathways,
+  getVulnerabilitiesOfPathways,
 } from "../utils";
 
 export const useResultModal = (attackCase: AttackCaseSchema) => {
@@ -12,9 +12,9 @@ export const useResultModal = (attackCase: AttackCaseSchema) => {
     return attackCase.attributes.map((attribute) => attribute.character.name);
   }, [attackCase.attributes]);
   const pathways = getPathways(attackCase);
-  const vulneravilities = getVulneravilitiesOfPathways(pathways);
-  const techniques = getTechniques(vulneravilities);
+  const vulnerabilities = getVulnerabilitiesOfPathways(pathways);
+  const techniques = getTechniques(vulnerabilities);
   const impacts = getImpactsOfTechniques(techniques);
-  console.log(characters, pathways, vulneravilities, techniques, impacts);
-  return { characters, pathways, vulneravilities, techniques, impacts };
+  console.log(characters, pathways, vulnerabilities, techniques, impacts);
+  return { characters, pathways, vulnerabilities, techniques, impacts };
 };

@@ -1,6 +1,6 @@
 import { OutlinedInput } from "@mui/material";
-import { TargetSchema } from "../@types";
-import { InfoBox } from ".";
+import { TargetSchema } from "../../@types";
+import { InfoBox } from "..";
 
 export default function Target({
   selectedTarget,

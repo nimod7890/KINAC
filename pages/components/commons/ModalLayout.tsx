@@ -43,13 +43,12 @@ export const ModalLayout: FC<ModalLayoutProps> = ({
 }) => {
   const { contentHeight = "max-content", hideFooter = false } = configs;
   return (
-    <Dialog open fullWidth maxWidth="xl">
+    <Dialog open maxWidth="xl">
       <ModalHeader
         onClose={onClose}
         sx={{
           variant: "h5",
           fontWeight: 700,
-          width: "100%",
           height: "4rem",
           padding: "8px",
           paddingLeft: "24px",

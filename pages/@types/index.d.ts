@@ -5,5 +5,5 @@ export * from "./pathway";
 export * from "./attribute";
 export * from "./attackCase";
 export * from "./technique";
-export * from "./vulneravility";
+export * from "./vulnerability";
 export * from "./impact";

@@ -1,7 +1,7 @@
 import { Stack, Radio, FormControlLabel } from "@mui/material";
-import { DeviceSchema, DevicesSchema } from "../@types";
-import { Hardware, Software } from "../enums/deviceEnum";
-import { InfoBox } from ".";
+import { DeviceSchema, DevicesSchema } from "../../@types";
+import { Hardware, Software } from "../../enums/deviceEnum";
+import { InfoBox } from "..";
 
 export default function Devices({
   device: selectedDivce,

@@ -2,7 +2,7 @@ import { IconButton, Tooltip } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 export const AddButton = () => {
   return (
-    <Tooltip arrow title="Add new Characteristic, Vul, Technique and Impact">
+    <Tooltip placement="top" arrow title="Add new Characteristic, Vul, Technique and Impact">
       <IconButton
         sx={{
           width: "55px",

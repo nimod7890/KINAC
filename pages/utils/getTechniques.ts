@@ -1,13 +1,11 @@
 import {
-  VulneravilitySchema,
-  VulneravilitiesSchema,
+  VulnerabilitySchema,
+  VulnerabilitiesSchema,
   TecheniqueSchema,
   TecheniquesSchema,
 } from "../@types";
 
-export function getTechnique(
-  vulneravility: VulneravilitySchema
-): TecheniqueSchema {
+export function getTechnique(vulneravility: VulnerabilitySchema): TecheniqueSchema {
   switch (vulneravility) {
     case "V1":
       return "T3";
@@ -25,11 +23,9 @@ export function getTechnique(
       return "";
   }
 }
-export function getTechniques(
-  vulneravilities: VulneravilitiesSchema
-): TecheniquesSchema {
-  return vulneravilities
-    .map((vulneravility) => getTechnique(vulneravility))
+export function getTechniques(vulnerabilities: VulnerabilitiesSchema): TecheniquesSchema {
+  return vulnerabilities
+    .map((vulnerability) => getTechnique(vulnerability))
     .filter((technique) => technique);
 }
 export function getFullTechniqueName(technique: TecheniqueSchema): string {
