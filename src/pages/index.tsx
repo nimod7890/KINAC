@@ -1,11 +1,11 @@
 import { Button, Stack } from "@mui/material";
 import { useState } from "react";
-import type { AttackCaseSchema } from "./@types";
-import { Hardware } from "./enums/deviceEnum";
-import { Attributes, Type, Devices, Target, ResultModal } from "./components";
-import { FlexSpaceBetween } from "./components/commons/FlexBox";
-import { AddButton } from "./components/AddButton";
-import { ResetButton } from "./components/ResetButton";
+import type { AttackCaseSchema } from "../@types";
+import { Hardware } from "../enums/deviceEnum";
+import { Attributes, Type, Devices, Target, ResultModal } from "../components";
+import { FlexSpaceBetween } from "../components/commons/FlexBox";
+import { AddButton } from "../components/AddButton";
+import { ResetButton } from "../components/ResetButton";
 
 /** Todo 
  - case row header로 변경
