@@ -32,12 +32,12 @@ npm run dev
 
 ##### Attack case Creation
 
-![1](preview/1.png)
+![1](preview/creation1.png)
 
-![2](preview/2.png)
+![2](preview/creation2.png)
 
-![3](preview/3.png)
+![3](preview/creation3.png)
 
-![4](preview/4.png)
+![4](preview/creation4.png)
 
-![5](preview/5.png)
+![5](preview/creation5.png)
